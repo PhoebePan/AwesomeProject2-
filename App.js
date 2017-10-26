@@ -1,9 +1,11 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View, Image } from 'react-native';
 import * as firebase from 'firebase';
 import { Input } from './components/Input';
 import { Button } from './components/Button';
 
+const remoteBg = 'https://chaos-dev.yuelaobank.com/src/img_banner/p_sign.png';
+const remoteBgIndex = 'https://chaos-dev.yuelaobank.com/src/img_banner/background.jpg'
 export default class App extends React.Component {
   state = {
     email: '',
@@ -84,45 +86,68 @@ export default class App extends React.Component {
     }
 
     return (
-      <View style={styles.form}>
-        <Input
-          placeholder='Enter your email...'
-          label='Email'
-          onChangeText={email => this.setState({ email })}
-          value={this.state.email}
-        />
-        <Input
-          placeholder='Enter your password...'
-          label='Password'
-          secureTextEntry
-          onChangeText={password => this.setState({ password })}
-          value={this.state.password}
-        />
-        <Button onPress={() => this.onPressSignIn()}>開始幸福</Button>
-        <Text>{this.state.error}</Text>
-      </View>
+      <Image
+        style={styles.bgimg}
+        source={{ uri: remoteBg }}
+      >
+        <View style={styles.form}>
+          <Input
+            placeholder='Enter your email...'
+            label='Email'
+            onChangeText={email => this.setState({ email })}
+            value={this.state.email}
+          />
+          <Input
+            placeholder='Enter your password...'
+            label='Password'
+            secureTextEntry
+            onChangeText={password => this.setState({ password })}
+            value={this.state.password}
+          />
+          <Button onPress={() => this.onPressSignIn()}>開始幸福</Button>
+          <Text>{this.state.error}</Text>
+        </View>
+      </Image>
     )
 
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        {this.renderCurrentState()}
-      </View>
+      <Image 
+        style={styles.bgindex}
+        source={{ uri: remoteBgIndex }}
+      >
+        <View style={styles.container}>
+          {this.renderCurrentState()}
+        </View>
+      </Image>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  bgindex: {
+    flex: 1,
+  },
+  bgimg: {
+    flex: 1,
+    width: null,
+    height: null,
+    paddingTop: 110,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+    resizeMode: 'contain'
+  },
   container: {
     flex: 1,
-    padding: 20,
+    padding: 0,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row'
   },
   form: {
-    flex: 1
+    flex: 1,
+    padding: 50
   }
 });
