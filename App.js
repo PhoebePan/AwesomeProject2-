@@ -3,6 +3,7 @@ import { ActivityIndicator, StyleSheet, Text, View, Image } from 'react-native';
 import * as firebase from 'firebase';
 import { Input } from './components/Input';
 import { Button } from './components/Button';
+import { HomeScreen } from './screens/HomeScreen'
 
 const remoteBg = 'https://chaos-dev.yuelaobank.com/src/img_banner/p_sign.png';
 const remoteBgIndex = 'https://chaos-dev.yuelaobank.com/src/img_banner/background.jpg'
@@ -82,6 +83,7 @@ export default class App extends React.Component {
         <View style={styles.form}>
           <Text>Logged In</Text>
           <Button onPress={() => this.onPressLogOut()}>Log Out</Button>
+          <HomeScreen></HomeScreen>
         </View>
       )
     }
