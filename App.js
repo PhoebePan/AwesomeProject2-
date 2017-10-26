@@ -6,6 +6,7 @@ import { Button } from './components/Button';
 
 const remoteBg = 'https://chaos-dev.yuelaobank.com/src/img_banner/p_sign.png';
 const remoteBgIndex = 'https://chaos-dev.yuelaobank.com/src/img_banner/background.jpg'
+
 export default class App extends React.Component {
   state = {
     email: '',
