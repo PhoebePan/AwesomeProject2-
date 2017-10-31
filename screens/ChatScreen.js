@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { Actions } from 'react-native-router-flux';
 
-const ChatScreen = () => (
-  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Text>Chat Screen</Text>
-  </View>
-);
-
-export { ChatScreen };
+export default class ChatScreen extends Component {
+  render(){
+    return(
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Chat Screen</Text>
+        <Text onPress={() => Actions.pop()}>Back</Text>
+      </View>
+    );
+  }
+}

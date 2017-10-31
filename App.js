@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { AppRegistry,View,Text,StyleSheet,ScrollView,TouchableOpacity,Button } from 'react-native';
-import { Router, Scene } from 'react-native-router-flux';
+import { Router, Scene, Tabs } from 'react-native-router-flux';
 
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
+import ChatScreen from './screens/ChatScreen';
 
 const App = () => {
   return (
@@ -15,9 +16,15 @@ const App = () => {
           initial
         />
         <Scene
+          tabs={true}
           key="home"
           component={HomeScreen}
           title="Home"
+        />
+        <Scene
+          key="chat"
+          component={ChatScreen}
+          title="Chat"
         />
       </Scene>
     </Router>
