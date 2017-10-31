@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
 import { AppRegistry,View,Text,StyleSheet,ScrollView,TouchableOpacity,Button } from 'react-native';
-import { StackNavigator,DrawerNavigator  } from 'react-navigation';
+import { Router, Scene } from 'react-native-router-flux';
 
 import LoginScreen from './screens/LoginScreen';
+import HomeScreen from './screens/HomeScreen';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <LoginScreen></LoginScreen>
-      </View>
-    );
-  }
+const App = () => {
+  return (
+    <Router>
+      <Scene key="root">
+        <Scene key="login"
+          component={LoginScreen}
+          title="Login"
+          initial
+        />
+        <Scene
+          key="home"
+          component={HomeScreen}
+          title="Home"
+        />
+      </Scene>
+    </Router>
+  );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 0,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row'
-  },
-  form: {
-    flex: 1,
-    padding: 50
-  }
-});
+export default App;
