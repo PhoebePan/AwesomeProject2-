@@ -1,10 +1,10 @@
 ### YueLoa Chat App
 
-#### How to Run uaaApp?  
+#### How to Run App?  
 
 ```
-$ git clone git@git.yuelaobank.com:dev/uaaApp.git
-$ cd uaaApp  
+$ git clone git@github.com:PhoebePan/AwesomeProject2-.git
+$ cd AwesomeProject2 
 $ npm install  
 $ react-native run-android
 ```
