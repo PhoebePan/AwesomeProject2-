@@ -39,3 +39,19 @@ $ npm install --save react-native-router-flux
 ```
 
 - Happy Coding with React Native!!! :whale: :whale: :whale:
+
+
+*****
+
+
+`!Attention`
+If you have red screen with `evaluating '(typeof Symbol === 'function' ? ....`
+[issue](https://stackoverflow.com/questions/45675766/for-is-not-a-function-evaluating-typeof-symbol-function-symbol-for)
+```
+$ npm install --save-dev babel-polyfill
+```
+
+and then import following in your App
+```
+import "babel-polyfill";
+```
