@@ -24,7 +24,7 @@ $ react-native run-android
 - Press "Debug Remote JS"  
 
 ### open chrome 
-`http://localhost:8081/debugger-u`
+`http://localhost:8081/debugger-ui`
 
 ### 使用 Chrome 開發者工具
 開啟 console 訊息
