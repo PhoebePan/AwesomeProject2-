@@ -25,8 +25,8 @@ __ESLINT__ - v4.10.0
 ```
 /uaaApp
 ├── /android/             # android native code, you can open in android studio
-├── /docs/                # some rules of project
-├── /ios/                 # ios native code, you can open in Xcode
+├── /docs/                # project rules
+├── /ios/                 # ios native code, you can open in xcode
 ├── /node_modules/        # 3rd-party libraries and utilities
 ├── /screens/             # screens of App
 ├── .babelrc              # babel Config
