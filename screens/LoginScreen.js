@@ -7,7 +7,7 @@ export default class LoginScreen extends Component {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text>Login Screen</Text>
-        <Button title="Login" onPress={() => Actions.me()} />
+        <Button title="Verify Box" onPress={Actions.verify_lightbox} />
       </View>
     );
   }
