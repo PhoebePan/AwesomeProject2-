@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Animated,
-  Dimensions,
-  Button
-} from "react-native";
+import { View, Text, StyleSheet, Animated, Dimensions } from "react-native";
 import { Actions } from "react-native-router-flux";
+import { Button } from "react-native-elements";
 import BaseLightbox from "./BaseLightbox";
 
 const styles = StyleSheet.create({
@@ -25,10 +19,16 @@ const styles = StyleSheet.create({
 
 const TargetDetailLightbox = ({ children }) => (
   <BaseLightbox verticalPercent={0.5} horizontalPercent={0.9}>
-    <Text>Target Detail Lightbox</Text>
-    <Text>Allows transparency for background</Text>
-    <Button title="Go to Chat Screen" onPress={() => Actions.chat()} />
-    <Text onPress={() => Actions.pop()}>Back</Text>
+    <View style={{ padding: 20, paddingBottom: 0 }}>
+      <Text>Target Detail Lightbox</Text>
+      <Text>Allows transparency for background</Text>
+      <Button
+        title="Go to Chat Screen"
+        icon={{ name: "chat" }}
+        buttonStyle={{ backgroundColor: "#79006E" }}
+        onPress={() => Actions.chat()}
+      />
+    </View>
   </BaseLightbox>
 );
 

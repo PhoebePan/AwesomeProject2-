@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import { Actions } from "react-native-router-flux";
 import { Button, FormLabel, FormInput } from "react-native-elements";
-import Loginbg from "../images/p_sign.png";
 
 const styles = StyleSheet.create({
   container: {
@@ -50,7 +49,10 @@ export default class LoginScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Image source={Loginbg} style={styles.container}>
+        <Image
+          source={require("../images/p_sign.png")}
+          style={styles.container}
+        >
           <FormLabel>手機登入，開始幸福</FormLabel>
           <FormInput
             placeholder="請輸入手機號碼"
