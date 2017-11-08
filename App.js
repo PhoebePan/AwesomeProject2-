@@ -12,11 +12,12 @@ import { Router, Scene, Tabs, Lightbox } from "react-native-router-flux";
 import "babel-polyfill";
 
 import LoginScreen from "./screens/LoginScreen";
-import VerifyScreen from "./screens/VerifyScreen";
 import MeScreen from "./screens/MeScreen";
+import TargetListScreen from "./screens/TargetListScreen";
 import ChatListScreen from "./screens/ChatListScreen";
 import ChatScreen from "./screens/ChatScreen";
 import VerifyLightbox from "./components/lightbox/VerifyLightbox";
+import TargetDetailLightbox from "./components/lightbox/TargetDetailLightbox";
 
 const TabIcon = ({ selected, title }) => {
   return <Text style={{ color: selected ? "red" : "black" }}>{title}</Text>;
@@ -44,15 +45,15 @@ export default class App extends React.Component {
               tabBarPosition={"bottom"}
             >
               <Scene
-                key="chatlist"
-                component={ChatListScreen}
-                title="Chat List"
+                key="targetlist"
+                component={TargetListScreen}
+                title="Target List"
                 icon={TabIcon}
               />
               <Scene
-                key="chat"
-                component={ChatScreen}
-                title="Chat"
+                key="chatlist"
+                component={ChatListScreen}
+                title="Chat List"
                 icon={TabIcon}
               />
               <Scene
@@ -62,9 +63,16 @@ export default class App extends React.Component {
                 icon={TabIcon}
               />
             </Scene>
+            {/* Chat Screen */}
+            <Scene key="chat" component={ChatScreen} title="Chat Screen" />
           </Scene>
           {/* Verify Lightbox */}
           <Scene key="verify_lightbox" component={VerifyLightbox} hideNavBar />
+          <Scene
+            key="target_detail_lightbox"
+            component={TargetDetailLightbox}
+            hideNavBar
+          />
         </Lightbox>
       </Router>
     );

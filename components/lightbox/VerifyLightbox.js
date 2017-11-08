@@ -5,9 +5,10 @@ import {
   StyleSheet,
   Animated,
   Dimensions,
-  Button
+  TextInput
 } from "react-native";
 import { Actions } from "react-native-router-flux";
+import { Button, FormLabel } from "react-native-elements";
 import BaseLightbox from "./BaseLightbox";
 
 const styles = StyleSheet.create({
@@ -23,11 +24,24 @@ const styles = StyleSheet.create({
   }
 });
 
-const VerifyLightbox = ({ children }) => (
+const VerifyLightbox = data => (
   <BaseLightbox verticalPercent={0.5} horizontalPercent={0.9}>
-    <Text>Verify Lightbox</Text>
-    <Text>Allows transparency for background</Text>
-    <Button title="Go to Me Screen" onPress={() => Actions.me()} />
+    <View style={{ paddingTop: 20, paddingLeft: 20, paddingRight: 20 }}>
+      <Text>貼心提醒：</Text>
+      <Text>
+        未正式入會前，網站不會出現您的資料 在任何情況下，您的手機號碼都不會被公開 輸入手機號碼，可看到每月之星的清晰照片，屬於您的緣份可能就在其中！
+      </Text>
+      <Text>手機: {data.mobile}</Text>
+      <Text>驗證碼: {data.otpCode}</Text>
+      <FormLabel>驗證碼:</FormLabel>
+      <TextInput placeholder="請輸入驗證碼" />
+      <Button
+        icon={{ name: "favorite" }}
+        title="登入"
+        buttonStyle={{ backgroundColor: "#79006E" }}
+        onPress={() => Actions.me()}
+      />
+    </View>
   </BaseLightbox>
 );
 

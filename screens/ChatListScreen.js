@@ -7,7 +7,7 @@ export default class ChatListScreen extends Component {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
         <Text>Chat List Screen</Text>
-        <Button title="Go to Caht screen" onPress={() => Actions.chat()} />
+        <Button title="Go to Chat Screen" onPress={() => Actions.chat()} />
         <Text onPress={() => Actions.pop()}>Back</Text>
       </View>
     );

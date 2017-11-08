@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { View, StyleSheet, Animated, Dimensions, Button } from "react-native";
+import { View, StyleSheet, Animated, Dimensions } from "react-native";
+import { Button } from "react-native-elements";
 import { Actions } from "react-native-router-flux";
 
 const { height: deviceHeight, width: deviceWidth } = Dimensions.get("window");
@@ -48,12 +49,22 @@ export default class BaseLightbox extends Component {
           width,
           height,
           justifyContent: "center",
-          alignItems: "center",
+          alignItems: "stretch",
           backgroundColor: "white"
         }}
       >
         {children}
-        <Button title="Close" onPress={this.closeModal} />
+        <Button
+          icon={{ name: "close" }}
+          title="關閉"
+          buttonStyle={{
+            backgroundColor: "gray",
+            marginLeft: 20,
+            marginRight: 20,
+            marginTop: 5
+          }}
+          onPress={this.closeModal}
+        />
       </View>
     );
   };
