@@ -9,6 +9,7 @@ import {
   Button
 } from "react-native";
 import { Router, Scene, Tabs, Lightbox } from "react-native-router-flux";
+import { Icon } from "react-native-elements";
 import "babel-polyfill";
 
 import LoginScreen from "./screens/LoginScreen";
@@ -19,8 +20,8 @@ import ChatScreen from "./screens/ChatScreen";
 import VerifyLightbox from "./components/lightbox/VerifyLightbox";
 import TargetDetailLightbox from "./components/lightbox/TargetDetailLightbox";
 
-const TabIcon = ({ selected, title }) => {
-  return <Text style={{ color: selected ? "red" : "black" }}>{title}</Text>;
+const TabIcon = ({ iconname, focused }) => {
+  return <Icon name={iconname} color={focused ? "white" : "#54004A"} />;
 };
 
 export default class App extends React.Component {
@@ -47,19 +48,22 @@ export default class App extends React.Component {
               <Scene
                 key="targetlist"
                 component={TargetListScreen}
-                title="Target List"
+                title="好友"
+                iconname="view-list"
                 icon={TabIcon}
               />
               <Scene
                 key="chatlist"
                 component={ChatListScreen}
-                title="Chat List"
+                title="聊天"
+                iconname="chat"
                 icon={TabIcon}
               />
               <Scene
                 key="me"
                 component={MeScreen}
-                title="About Me"
+                title="首頁"
+                iconname="home"
                 icon={TabIcon}
               />
             </Scene>
