@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     width: null,
     height: null,
     flex: 1,
-    alignItems: "center",
+    alignItems: "stretch",
     justifyContent: "center"
   }
 });
@@ -48,7 +48,13 @@ export default class LoginScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <View
+        style={{
+          flex: 1,
+          alignItems: "stretch",
+          justifyContent: "center"
+        }}
+      >
         <Image
           source={require("../images/p_sign.png")}
           style={styles.container}

@@ -54,7 +54,7 @@ const VerifyLightbox = data => (
         icon={{ name: "favorite" }}
         title="登入"
         buttonStyle={{ backgroundColor: "#79006E" }}
-        onPress={() => Actions.me()}
+        onPress={() => Actions.home()}
       />
     </View>
   </BaseLightbox>
