@@ -38,7 +38,12 @@ class DrawerContent extends React.Component {
             style={styles.iconLabel}
             onPress={() => Actions.home()}
             buttonStyle={{ backgroundColor: "white" }}
-            textStyle={{ color: "#5c5c5c", textAlign: "left", top: -10 }}
+            textStyle={{
+              color: "#5c5c5c",
+              textAlign: "left",
+              top: -10,
+              left: -10
+            }}
             title={`首頁`}
           />
         </View>
@@ -48,7 +53,12 @@ class DrawerContent extends React.Component {
             style={styles.iconLabel}
             onPress={() => Actions.targetlist()}
             buttonStyle={{ backgroundColor: "white" }}
-            textStyle={{ color: "#5c5c5c", textAlign: "left", top: -10 }}
+            textStyle={{
+              color: "#5c5c5c",
+              textAlign: "left",
+              top: -10,
+              left: -10
+            }}
             title={`好友`}
           />
         </View>
@@ -58,7 +68,12 @@ class DrawerContent extends React.Component {
             style={styles.iconLabel}
             onPress={() => Actions.chatlist()}
             buttonStyle={{ backgroundColor: "white" }}
-            textStyle={{ color: "#5c5c5c", textAlign: "left", top: -10 }}
+            textStyle={{
+              color: "#5c5c5c",
+              textAlign: "left",
+              top: -10,
+              left: -10
+            }}
             title={`聊天`}
           />
         </View>
@@ -68,7 +83,12 @@ class DrawerContent extends React.Component {
             style={styles.iconLabel}
             onPress={Actions.pop}
             buttonStyle={{ backgroundColor: "white" }}
-            textStyle={{ color: "#5c5c5c", textAlign: "left", top: -10 }}
+            textStyle={{
+              color: "#5c5c5c",
+              textAlign: "left",
+              top: -10,
+              left: -10
+            }}
             title={`關閉`}
           />
         </View>

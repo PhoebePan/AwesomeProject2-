@@ -13,7 +13,8 @@ import {
   Scene,
   Tabs,
   Drawer,
-  Lightbox
+  Lightbox,
+  Actions
 } from "react-native-router-flux";
 import { Icon } from "react-native-elements";
 import "babel-polyfill";
@@ -65,6 +66,18 @@ export default class App extends React.Component {
                 tabBarPosition={"bottom"}
               >
                 <Scene
+                  key="home"
+                  component={HomeScreen}
+                  title="首頁"
+                  navBarButtonColor="white"
+                  navigationBarStyle={{
+                    backgroundColor: "#79006E",
+                    height: 40
+                  }}
+                  iconname="home"
+                  icon={TabIcon}
+                />
+                <Scene
                   key="targetlist"
                   component={TargetListScreen}
                   navBarButtonColor="white"
@@ -86,14 +99,6 @@ export default class App extends React.Component {
                   }}
                   title="聊天"
                   iconname="chat"
-                  icon={TabIcon}
-                />
-                <Scene
-                  key="home"
-                  component={HomeScreen}
-                  title="首頁"
-                  hideNavBar
-                  iconname="home"
                   icon={TabIcon}
                 />
               </Scene>
