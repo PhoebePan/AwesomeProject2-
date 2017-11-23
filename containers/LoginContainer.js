@@ -2,17 +2,7 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
 import { Actions } from "react-native-router-flux";
 import { Button, FormLabel, FormInput } from "react-native-elements";
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: null,
-    height: null,
-    flex: 1,
-    alignItems: "stretch",
-    justifyContent: "center"
-  }
-});
+import styled from "styled-components/native";
 
 export default class LoginScreen extends Component {
   constructor(props) {
@@ -48,17 +38,8 @@ export default class LoginScreen extends Component {
 
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "stretch",
-          justifyContent: "center"
-        }}
-      >
-        <Image
-          source={require("../images/p_sign.png")}
-          style={styles.container}
-        >
+      <Container>
+        <LoginBg source={require("../images/p_sign.png")}>
           <FormLabel>手機登入，開始幸福</FormLabel>
           <FormInput
             placeholder="請輸入手機號碼"
@@ -74,8 +55,22 @@ export default class LoginScreen extends Component {
               this._getOtpCode();
             }}
           />
-        </Image>
-      </View>
+        </LoginBg>
+      </Container>
     );
   }
 }
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: stretch;
+`;
+
+const LoginBg = styled.Image`
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: stretch;
+`;

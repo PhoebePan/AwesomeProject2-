@@ -9,7 +9,6 @@ class Chatview extends React.Component {
     this.state = {
       messages: []
     };
-
     this.renderBubble = this.renderBubble.bind(this);
   }
 
@@ -34,8 +33,7 @@ class Chatview extends React.Component {
           user: {
             _id: 2,
             name: "React Native",
-            avatar:
-              "https://trello-avatars.s3.amazonaws.com/6ba321bb8691599621e70460599c447f/30.png"
+            avatar: "http://lorempixel.com/400/400/cats/1/"
           }
         },
         {
@@ -45,8 +43,7 @@ class Chatview extends React.Component {
           user: {
             _id: 2,
             name: "React Native",
-            avatar:
-              "https://trello-avatars.s3.amazonaws.com/6ba321bb8691599621e70460599c447f/30.png"
+            avatar: "http://lorempixel.com/400/400/cats/1/"
           }
         },
         {
@@ -67,8 +64,7 @@ class Chatview extends React.Component {
           user: {
             _id: 2,
             name: "React Native",
-            avatar:
-              "https://trello-avatars.s3.amazonaws.com/6ba321bb8691599621e70460599c447f/30.png"
+            avatar: "http://lorempixel.com/400/400/cats/1/"
           }
         }
       ]
@@ -120,6 +116,9 @@ class Chatview extends React.Component {
 }
 
 export default class ChatScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return <Chatview />;
   }

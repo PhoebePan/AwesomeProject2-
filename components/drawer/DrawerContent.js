@@ -1,100 +1,49 @@
 import React from "react";
-import { StyleSheet, Text, View, ViewPropTypes } from "react-native";
-import { Button } from "react-native-elements";
+import { Text, View, ViewPropTypes } from "react-native";
+import { Button, Icon } from "react-native-elements";
 import { Actions } from "react-native-router-flux";
-import { Icon } from "react-native-elements";
+import styled from "styled-components/native";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "flex-start",
-    alignItems: "stretch",
-    backgroundColor: "transparent"
-  },
-  menulist: {
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    flexDirection: "row",
-    paddingTop: 10,
-    paddingLeft: 10,
-    backgroundColor: "white",
-    height: 50
-  },
-  icon: {
-    flex: 1
-  },
-  iconLabel: {
-    flex: 4
-  }
-});
+import MenuList from "./MenuList";
 
 class DrawerContent extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.menulist}>
-          <Icon style={styles.icon} name="home" color="pink" />
-          <Button
-            style={styles.iconLabel}
-            onPress={() => Actions.home()}
-            buttonStyle={{ backgroundColor: "white" }}
-            textStyle={{
-              color: "#5c5c5c",
-              textAlign: "left",
-              top: -10,
-              left: -10
-            }}
-            title={`首頁`}
-          />
-        </View>
-        <View style={styles.menulist}>
-          <Icon style={styles.icon} name="view-list" color="pink" />
-          <Button
-            style={styles.iconLabel}
-            onPress={() => Actions.targetlist()}
-            buttonStyle={{ backgroundColor: "white" }}
-            textStyle={{
-              color: "#5c5c5c",
-              textAlign: "left",
-              top: -10,
-              left: -10
-            }}
-            title={`好友`}
-          />
-        </View>
-        <View style={styles.menulist}>
-          <Icon style={styles.icon} name="chat" color="pink" />
-          <Button
-            style={styles.iconLabel}
-            onPress={() => Actions.chatlist()}
-            buttonStyle={{ backgroundColor: "white" }}
-            textStyle={{
-              color: "#5c5c5c",
-              textAlign: "left",
-              top: -10,
-              left: -10
-            }}
-            title={`聊天`}
-          />
-        </View>
-        <View style={styles.menulist}>
-          <Icon style={styles.icon} name="close" color="pink" />
-          <Button
-            style={styles.iconLabel}
-            onPress={Actions.pop}
-            buttonStyle={{ backgroundColor: "white" }}
-            textStyle={{
-              color: "#5c5c5c",
-              textAlign: "left",
-              top: -10,
-              left: -10
-            }}
-            title={`關閉`}
-          />
-        </View>
-      </View>
+      <Container>
+        <MenuList
+          name={"home"}
+          color={"pink"}
+          link={() => Actions.home()}
+          title={"首頁"}
+        />
+        <MenuList
+          name={"view-list"}
+          color={"pink"}
+          link={() => Actions.targetlist()}
+          title={"好友"}
+        />
+        <MenuList
+          name={"chat"}
+          color={"pink"}
+          link={() => Actions.chatlist()}
+          title={"聊天"}
+        />
+        <MenuList
+          name={"close"}
+          color={"pink"}
+          link={() => Actions.login()}
+          title={"登出"}
+        />
+      </Container>
     );
   }
 }
 
 export default DrawerContent;
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-color: transparent;
+`;

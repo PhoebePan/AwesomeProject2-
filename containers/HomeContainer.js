@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, Text, Button, WebView } from "react-native";
 import { Actions } from "react-native-router-flux";
 
-const DEFAULT_URL = "https://chaos-dev.yuelaobank.com/";
+const DEFAULT_URL = "https://beta.yuelaobank.com/";
 
 export default class HomeScreen extends Component {
   constructor(props) {

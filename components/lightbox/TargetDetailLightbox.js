@@ -1,16 +1,40 @@
 import React from "react";
-import styled from "styled-components/native";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Animated,
-  Dimensions,
-  Image
-} from "react-native";
+import { View, Text, Animated, Dimensions, Image } from "react-native";
 import { Actions } from "react-native-router-flux";
 import { Button } from "react-native-elements";
+import styled from "styled-components/native";
+
 import BaseLightbox from "./BaseLightbox";
+
+const TargetDetailLightbox = children => (
+  <BaseLightbox verticalPercent={0.7} horizontalPercent={0.9}>
+    <Title>
+      <Name>{children.title}</Name>
+      <Close onPress={() => Actions.pop()}>X</Close>
+    </Title>
+    <TargetDetail>
+      <Avatar
+        resizeMode="contain"
+        source={{
+          uri: children.avatar_url
+        }}
+      />
+      <Button
+        title="聊天"
+        icon={{ name: "chat" }}
+        buttonStyle={{
+          backgroundColor: "#79006E",
+          marginLeft: 0,
+          marginRight: 0,
+          marginTop: 10
+        }}
+        onPress={() => Actions.chat({ title: children.title })}
+      />
+    </TargetDetail>
+  </BaseLightbox>
+);
+
+export default TargetDetailLightbox;
 
 const Title = styled.View`
   flex-direction: row;
@@ -57,33 +81,3 @@ const Avatar = styled.Image`
   height: 300;
   margin-left: 15;
 `;
-
-const TargetDetailLightbox = children => (
-  <BaseLightbox verticalPercent={0.7} horizontalPercent={0.9}>
-    <Title>
-      <Name>{children.title}</Name>
-      <Close onPress={() => Actions.pop()}>X</Close>
-    </Title>
-    <TargetDetail>
-      <Avatar
-        resizeMode="contain"
-        source={{
-          uri: children.avatar_url
-        }}
-      />
-      <Button
-        title="聊天"
-        icon={{ name: "chat" }}
-        buttonStyle={{
-          backgroundColor: "#79006E",
-          marginLeft: 0,
-          marginRight: 0,
-          marginTop: 10
-        }}
-        onPress={() => Actions.chat()}
-      />
-    </TargetDetail>
-  </BaseLightbox>
-);
-
-export default TargetDetailLightbox;
